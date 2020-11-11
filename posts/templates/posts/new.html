@@ -1,0 +1,34 @@
+{% extends "base.html" %}
+
+{% load static %}
+
+{% block style %}
+        <link rel = "stylesheet" href="{% static 'posts/style.css' %}" type="text/css" />
+{% endblock %}
+
+
+{% block content %}
+        <h1>New Post</h1>
+        
+        <form action = "{% url 'posts:create' %}" method="POST" enctype="multipart/form-data">
+            {% csrf_token %}
+
+            <div class="form-group">
+                <label for="body">본문</label>
+                <br>
+                <textarea clss="form-control" id ="body" cols=40 rows=10 name="body"></textarea>
+            </div>
+
+            <div class="form-group">
+                <label for="image">이미지</label>
+                <input type="file" class="form-control-file" id="image" name="image"/>
+            </div>
+
+
+            <br>
+            <button type="submit" class="btn btn-info">작성하기</button>
+            
+        </form>
+        
+            <a href ="{% url 'posts:index' %}">목록</a>
+{% endblock %}

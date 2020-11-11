@@ -1,0 +1,16 @@
+* {
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+    font-family: 'AppleSDGothicNeoM00', 'AppleSDGothicNeoB00';
+}
+
+h1 {
+    font-size: 35px;
+    cursor: pointer;
+}
+
+h1:hover {
+    color:#4298B1;
+}
+
